@@ -31,7 +31,7 @@ Whether you want motivational quotes, sarcastic remarks, or pure chaos — your 
 1. Download FloatingMessages.zip
 2. Extract the `FloatingMessages.zip` folder inside your DesktopGoose `Mods` directory.
 3. Add to the `Messages` folder, one or more `.txt` files with your custom messages (one message per line).
-4. Inside the `Messages` folder there is the `Ignored` folder, so you can manage many .txt without deleting them.
+4. Inside the `Messages` folder there is the `Ignored` folder, so you can manage many `.txt` without deleting them.
 5. Edit the config.ini file as you like
 6. Launch DesktopGoose and enjoy the chatter!
 
@@ -47,7 +47,7 @@ Whether you want motivational quotes, sarcastic remarks, or pure chaos — your 
 ## 💡 Tips
 
 - Use multiple `.txt` files to keep things fresh and can include emojis or even passive-aggressive reminders.
-- Want themed messages? Try naming files like `morning.txt`, `work.txt`, `chaos.txt`.
+- Want themed messages? Try naming files like `angry.txt`, `work.txt`, `chaos.txt`.
 
 ## 🧠 Credits
 
