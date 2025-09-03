@@ -1,0 +1,40 @@
+name: Build FloatingMessages (.NET Framework)
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+    # 1. Baixa o código do repositório
+    - uses: actions/checkout@v4
+
+    # 2. Configura o MSBuild (necessário para compilar .NET Framework clássico)
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v2
+
+    # 3. Configura o NuGet
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v2
+
+    # 4. Restaura dependências usando o .csproj
+    - name: Restore NuGet packages
+      run: nuget restore FloatingMessages.csproj
+
+    # 5. Compila o projeto .csproj em modo Release
+    - name: Build with MSBuild
+      run: msbuild FloatingMessages.csproj /p:Configuration=Release
+
+    # 6. Publica a pasta bin/Release como artefato
+    - name: Upload DLL as artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: FloatingMessages-Build-${{ github.run_number }}
+
+        path: |
+          **/bin/Release/
